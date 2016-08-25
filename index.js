@@ -110,7 +110,9 @@ function MochaJUnitReporter(runner, options) {
       suite.title = 'Root Suite';
     }
 
-    if (!isInvalidSuite(suite)) {
+    // Do not print results for an empty root suite.  An empty root suite 
+    // occurs if all tests are contained within a describe().
+    if (!isInvalidSuite(suite) && !(suite.root && suite.tests.length < 1)) {
       testsuites.push(this.getTestsuiteData(suite));
     }
   }.bind(this));
