@@ -107,7 +107,8 @@ function MochaJUnitReporter(runner, options) {
 
   this._runner.on('suite', function(suite) {
     if (suite.root) {
-      suite.title = 'Root Suite';
+    	suite.title = '';
+      //suite.title = 'Root Suite';
     }
 
     // Do not print results for an empty root suite.  An empty root suite 
