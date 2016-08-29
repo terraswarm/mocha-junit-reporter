@@ -181,6 +181,7 @@ MochaJUnitReporter.prototype.getTestcaseData = function(test, err) {
         name: test.fullTitle(),
         time: (typeof test.duration === 'undefined') ? 0 : test.duration / 1000,
         //classname: test.title
+        classname: 'NodeHost'
       }
     }]
   };
